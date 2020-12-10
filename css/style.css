@@ -33,7 +33,7 @@ section#footer p,
 .clear-completed p{
     font-size: 1.3rem;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .active_tab {
@@ -47,7 +47,7 @@ section#footer p,
 
 p {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h3 {
