@@ -148,9 +148,9 @@ $(document).ready(function(){
     });
 
     // reordering of todo list drag and drop
-    const dragElement = document.querySelector("#todo-list");
-    Sortable.create(dragElement, {
-      animation: 200,
-      ghostClass: "ghostBg"
-    });
+    // const dragElement = document.querySelector("#todo-list");
+    // Sortable.create(dragElement, {
+    //   animation: 200,
+    //   ghostClass: "ghostBg"
+    // });
 });
