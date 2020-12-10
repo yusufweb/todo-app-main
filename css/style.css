@@ -1,7 +1,7 @@
 /* general styling */
 .container {
     width: 100%;
-    max-width: 550px;
+    max-width: 576px;
     padding: 0 3rem;
 }
 
@@ -20,6 +20,8 @@ li {
 }
 
 .shadow {
+    width: 100%;
+    max-width: 576px;
     box-shadow: 0px 10px 13px -7px #000000,
     1px 1px 11px 1px hsl(237, 14%, 26%);
 }
@@ -29,9 +31,9 @@ a,
 .item-left p,
 section#footer p,
 .clear-completed p{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .active_tab {
@@ -40,12 +42,12 @@ section#footer p,
 
 .line-through {
     text-decoration: line-through;
-    color: hsl(236, 9%, 61%)
+    color: hsl(234, 11%, 52%)
 }
 
 p {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 h3 {
@@ -84,16 +86,16 @@ h3 {
 /* header section [Dark theme] */
 header {
     width: 100%;
-    height: 200px;
+    height: 230px;
     background: url(../images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    padding-top: 3rem;
+    padding-top: 3.5rem;
 }
 
 header h3 {
-    font-size: 3.8rem;
+    font-size: 3rem;
     color: hsl(0, 0%, 98%);
     letter-spacing: 1.3rem;
     font-weight: 600;
@@ -107,7 +109,7 @@ header #theme-switcher {
 /* add todo input section */
 section#add-todo-input {
     width: 100%;
-    margin-top: -11rem;
+    margin-top: -12rem;
     margin-bottom: 2.3rem;
 }
 
@@ -130,7 +132,7 @@ section#add-todo-input {
     width: 100%;
     padding: 1rem 0;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     background: none;
     border: none;
     outline: none;
@@ -188,7 +190,7 @@ section#todo-action {
 }
 
 section#todo-action .item-left {
-    width: 65%;
+    width: 60%;
     order: 1;
     margin-bottom: 2rem;
     background: hsl(235, 24%, 19%);
@@ -205,7 +207,7 @@ section#todo-action .filter-todo {
 }
 
 section#todo-action .clear-completed {
-    width: 35%;
+    width: 40%;
     margin-bottom: 2rem;
     order: 2;
     background: hsl(235, 24%, 19%);
@@ -213,8 +215,16 @@ section#todo-action .clear-completed {
     border-radius: 0 0 5px 0px;
 }
 
+section#todo-action .clear-completed:hover {
+    color: hsl(0, 0%, 98%);
+}
+
 section#todo-action .filter-todo li a {
     color: hsl(234, 11%, 52%);
+}
+
+section#todo-action .filter-todo li a:hover {
+    color: hsl(0, 0%, 98%);
 }
 
 /* footer section */
@@ -274,8 +284,16 @@ section#footer p {
     background: hsl(0, 0%, 98%);
 }
 
+.light-theme section#todo-action .filter-todo li a:hover {
+    color: hsl(235, 19%, 35%);
+}
+
 .light-theme section#todo-action .clear-completed {
     background: hsl(0, 0%, 98%);
+}
+
+.light-theme section#todo-action .clear-completed:hover {
+    color: hsl(235, 19%, 35%);
 }
 
 .light-theme section#main #todo-list .todo-list-item:hover p{
@@ -291,12 +309,17 @@ section#footer p {
 
     header {
         background: url(../images/bg-desktop-dark.jpg);
-        height: 250px;
+        height: 270px;
+        padding-top: 6rem;
+    }
+
+    header h3 {
+        font-size: 3.8rem;
     }
 
     .light-theme header {
         background: url(../images/bg-desktop-light.jpg);
-        height: 220px;
+        height: 270px;
     }
 
     #delete-todo img{

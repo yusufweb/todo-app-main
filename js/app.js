@@ -132,11 +132,11 @@ $(document).ready(function(){
         console.log(LIS);
         LIS.each(function(index, value) {
             if (data_filter == "all") {
-                $(value).show('650');
+                $(value).show('400');
             }
             else {
-                $(value).not('.'+data_filter).hide('650');
-                $(value).filter('.'+data_filter).show('650');
+                $(value).not('.'+data_filter).hide('400');
+                $(value).filter('.'+data_filter).show('400');
             }
         });
     });
