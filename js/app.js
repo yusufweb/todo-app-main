@@ -142,10 +142,10 @@ $(document).ready(function(){
     });
 
     // change filter link color when clicked on 
-    // $(".nav-link").on("click", function(){
-    //     $(".nav-link").removeClass("active_tab");
-    //     $(this).addClass("active_tab");
-    // });
+    $(".nav-link").on("click", function(){
+        $(".nav-link").removeClass("active_tab");
+        $(this).addClass("active_tab");
+    });
 
     // reordering of todo list drag and drop
     const dragElement = document.querySelector("#todo-list");
