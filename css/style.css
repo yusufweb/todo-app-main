@@ -102,7 +102,7 @@ header h3 {
 }
 
 header #theme-switcher {
-    width: 5%;
+    width: 6%;
     cursor: pointer;
 }
 
@@ -315,6 +315,10 @@ section#footer p {
 
     header h3 {
         font-size: 3.8rem;
+    }
+
+    header #theme-switcher {
+        width: 4%;
     }
 
     .light-theme header {
