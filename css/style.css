@@ -179,7 +179,7 @@ section#main #todo-list .todos {
 }
 
 section#main #todo-list #delete-todo {
-    width: 1.8em;
+    width: 1.5em;
     cursor: pointer;
 }
 
@@ -324,6 +324,10 @@ section#footer p {
     .light-theme header {
         background: url(../images/bg-desktop-light.jpg);
         height: 270px;
+    }
+
+    section#main #todo-list #delete-todo {
+        width: 1.7em;
     }
 
     #delete-todo img{
