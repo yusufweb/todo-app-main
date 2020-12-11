@@ -102,7 +102,7 @@ header h3 {
 }
 
 header #theme-switcher {
-    width: 7%;
+    width: 5%;
     cursor: pointer;
 }
 
@@ -179,7 +179,7 @@ section#main #todo-list .todos {
 }
 
 section#main #todo-list #delete-todo {
-    width: 1.4em;
+    width: 1.8em;
     cursor: pointer;
 }
 
