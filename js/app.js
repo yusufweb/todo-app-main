@@ -1,6 +1,5 @@
 $(document).ready(function(){
     // Global variables
-    const clearCompletedTodo = document.querySelector("#clear-complete-todo");
     let insertList = document.querySelector("#todo-list");
 
     // theme changing functionality
@@ -18,7 +17,6 @@ $(document).ready(function(){
                 $(this).attr("src", "images/icon-sun.svg");
                 $(this).attr("alt", "sun");
             break;
-
         }
     });
 
@@ -43,7 +41,7 @@ $(document).ready(function(){
             if(todo){
                 todoObj.id = id;
                 todoObj.name = todo;
-                todoObj.complete = false;
+                // todoObj.complete = false;
                 // todoObj.delete = false;
                 allTodos.push(todoObj);
                 displayTodoDom(todoObj);
@@ -74,12 +72,11 @@ $(document).ready(function(){
     };
 
     /*
-    * Track which element is clicked to
+    * Track which element is clicked to:
     * complete or delete
     */ 
     insertList.addEventListener("click", function(ev){
         let element = ev.target;
-        console.log(element);
         let eventTarget = element.attributes.action.value;
         if (eventTarget == "complete") {
             completeTodo(element);
@@ -101,10 +98,14 @@ $(document).ready(function(){
         $("#total-left").text(totalTodo);
     };
 
-    // delete individual todo
+    /*
+     *
+     * delete individual element
+     * if element is marked as completed don't totalTodo--
+     * if element is not marked as completed, do totalTodo--
+    */
     let deleteTodo = element => {
-        let linethrough = element.parentNode.parentNode;
-        console.log(linethrough);    
+        let linethrough = element.parentNode.parentNode;    
         if (!linethrough.classList.contains('completed')) {
             element.parentNode.parentNode.remove();
             totalTodo--;
@@ -115,7 +116,7 @@ $(document).ready(function(){
     };
 
     // clear or delete all completed(marked todo) todo
-    clearCompletedTodo.addEventListener("click", function(){
+    $("#clear-complete-todo").on("click", function(){
         let completedTodos = document.querySelectorAll(".todo-list-item");
         completedTodos.forEach(element => {
             if (element.classList.contains('completed')) {
@@ -148,9 +149,9 @@ $(document).ready(function(){
     });
 
     // reordering of todo list drag and drop
-    // const dragElement = document.querySelector("#todo-list");
-    // Sortable.create(dragElement, {
-    //   animation: 200,
-    //   ghostClass: "ghostBg"
-    // });
+    const dragElement = document.querySelector("#todo-list");
+    Sortable.create(dragElement, {
+      animation: 200,
+      ghostClass: "ghostBg"
+    });
 });

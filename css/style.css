@@ -22,8 +22,7 @@ li {
 .shadow {
     width: 100%;
     max-width: 576px;
-    box-shadow: 0px 10px 13px -7px #000000,
-    1px 1px 11px 1px hsl(237, 14%, 26%);
+    box-shadow: 1px 150px 35px -10px hsla(235, 20%, 11%, 0.116);
 }
 
 a,
@@ -33,7 +32,7 @@ section#footer p,
 .clear-completed p{
     font-size: 1.3rem;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .active_tab {
@@ -47,7 +46,7 @@ section#footer p,
 
 p {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 h3 {
@@ -125,7 +124,7 @@ section#add-todo-input {
 }
 
 .main-input .input-todo {
-    width: 86%;
+    width: 87%;
 }
 
 .main-input input[type="text"] {
@@ -230,8 +229,7 @@ section#todo-action .filter-todo li a:hover {
 /* footer section */
 section#footer {
     width: 100%;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin: 4rem 0;
 }
 
 section#footer p {
@@ -241,7 +239,7 @@ section#footer p {
 
 /***** light theme and mobile layout ********/
 .light-theme {
-    background: hsl(236, 33%, 92%)
+    background: hsl(0, 0%, 98%);
 }
 
 .light-theme .circle .fa-circle-thin {
@@ -301,10 +299,16 @@ section#footer p {
 }
 /****** end of dark theme and mobile layout *******/
 
-/* media query */
+/* media query medium size and large screen */
 @media (min-width: 576px) {
     p {
         font-size: 1.4rem;
+    }
+
+    .shadow {
+        width: 100%;
+        max-width: 576px;
+        box-shadow: 1px 80px 35px -10px hsla(235, 20%, 11%, 0.116);
     }
 
     header {
@@ -319,6 +323,14 @@ section#footer p {
 
     header #theme-switcher {
         width: 4%;
+    }
+
+    .main-input .circle {
+        width: 8%;
+    }
+    
+    .main-input .input-todo {
+        width: 96%;
     }
 
     .light-theme header {
