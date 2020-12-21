@@ -77,12 +77,15 @@ $(document).ready(function(){
     */ 
     insertList.addEventListener("click", function(ev){
         let element = ev.target;
-        let eventTarget = element.attributes.action.value;
+        let eventTarget = $(element).data("action");
         if (eventTarget == "complete") {
             completeTodo(element);
         }
         if (eventTarget == "delete") {
             deleteTodo(element);
+        }
+        if (eventTarget == "unchecked") {
+            uncheckTodo(element);
         }
     })
 
@@ -93,8 +96,20 @@ $(document).ready(function(){
         linethrough.classList.add("line-through");
         element.parentNode.parentNode.classList.add("completed");
         element.parentNode.parentNode.classList.remove("active");
-        circle.innerHTML = "<img src='images/icon-check.svg' alt='check' class='rounded-circle' id='checked'>";
+        circle.innerHTML = "<img src='images/icon-check.svg' alt='check' class='rounded-circle checked' data-action='unchecked'>";
         totalTodo--;
+        $("#total-left").text(totalTodo);
+    };
+
+    // uncheck completed todos
+    let uncheckTodo = element => {
+        let circle = element.parentNode.parentNode.querySelector(".circle");
+        let linethrough = element.parentNode.parentNode.querySelector(".todos");
+        linethrough.classList.remove("line-through");
+        element.parentNode.parentNode.classList.remove("completed");
+        element.parentNode.parentNode.classList.add("active");
+        circle.innerHTML = "<i class='fa fa-circle-thin' data-action='complete'></i>";
+        totalTodo++;
         $("#total-left").text(totalTodo);
     };
 
@@ -129,9 +144,7 @@ $(document).ready(function(){
     $(".nav-link").on("click", function(e){
         e.preventDefault();
         let data_filter = $(this).attr("data-filter"); 
-        let LIS = $(".todo-list-item");
-        console.log(LIS);
-        LIS.each(function(index, value) {
+        $(".todo-list-item").each(function(index, value) {
             if (data_filter == "all") {
                 $(value).show('400');
             }
