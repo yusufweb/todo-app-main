@@ -58,13 +58,13 @@ $(document).ready(function(){
     let displayTodoDom = objValue => {    
         let items = `<li class="todo-list-item justify-content-between align-items-center active" id="${objValue.id}">
         <div class="circle">
-            <i class="fa fa-circle-thin" id="unchecked" action="complete"></i>
+            <i class="fa fa-circle-thin" id="unchecked" data-action="complete"></i>
         </div>
         <div class="todos">
           <p class="text">${objValue.name}</p>
         </div>
         <div id="delete-todo">
-            <img src="images/icon-cross.svg" alt="delete to item" class="img-fluid" action="delete">
+            <img src="images/icon-cross.svg" alt="delete to item" class="img-fluid" data-action="delete">
         </div>
       </li>`;
       let position = "beforeend";  
@@ -155,7 +155,7 @@ $(document).ready(function(){
         });
     });
 
-    // change filter link color when clicked on 
+    // change filter link color when clicked on [active-color] 
     $(".nav-link").on("click", function(){
         $(".nav-link").removeClass("active_tab");
         $(this).addClass("active_tab");
